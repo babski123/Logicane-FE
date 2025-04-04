@@ -8,8 +8,8 @@ const MainUI = () => {
   );
   const [error, setError] = useState("");
 
-  const handleDestinationChange = async (address) => {
-    const success = await sendAddressToAPI(address);
+  const handleDestinationChange = async (address, placeId) => {
+    const success = await sendAddressToAPI(placeId);
     if (success) {
       setDestination(address);
       localStorage.setItem("destination", address);

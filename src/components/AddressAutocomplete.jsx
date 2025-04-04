@@ -45,7 +45,7 @@ const AddressAutocomplete = ({ onSelect, errorClearer }) => {
             <li
               key={suggestion.place_id}
               onClick={() => {
-                onSelect(suggestion.description);
+                onSelect(suggestion.description, suggestion.place_id);
                 setQuery(suggestion.description);
                 setSuggestions([]);
               }}
