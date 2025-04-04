@@ -21,10 +21,11 @@ const MainUI = () => {
 
   const sendAddressToAPI = async (address) => {
     try {
-      const response = await fetch("https://your-api.com/destination", {
+      const response = await fetch("https://logicane-229098869970.asia-southeast2.run.app/store-address", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "x-api-key": "eleazer-software-electronics"
         },
         body: JSON.stringify({ address }),
       });
@@ -58,7 +59,7 @@ const MainUI = () => {
           </button>
         </>
       ) : (
-        <AddressAutocomplete onSelect={handleDestinationChange} />
+        <AddressAutocomplete onSelect={handleDestinationChange} errorClearer={setError} />
       )}
     </div>
   );

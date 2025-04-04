@@ -1,7 +1,7 @@
 // src/components/AddressAutocomplete.jsx
 import { useState, useEffect, useRef } from "react";
 
-const AddressAutocomplete = ({ onSelect }) => {
+const AddressAutocomplete = ({ onSelect, errorClearer }) => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const autocompleteService = useRef(null);
@@ -35,6 +35,7 @@ const AddressAutocomplete = ({ onSelect }) => {
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onClick={() => errorClearer("")}
         placeholder="Enter destination"
         className="input"
       />
